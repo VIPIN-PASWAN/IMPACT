@@ -23,42 +23,50 @@
     </div>
    {% endfor %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+ <div class="container">
 
-    <a class="navbar-brand" href="#">IMPACT</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+       <header class="blog-header py-3 ">
+    <div class="row flex-nowrap justify-content-center align-items-center">
+<!--      <div class="col-4 pt-1">-->
+<!--        <a class="link-secondary" href="#">Subscribe</a>-->
+<!--      </div>-->
+      <div class="col-12 text-center">
+        <a class="blog-header-logo text-dark" href="#"><h1>IMPACT</h1></a>
+      </div>
+<!--      <div class="col-2 d-flex justify-content-end align-items-center">-->
+<!--      </div>-->
     </div>
-  </div>
-</nav>
+  </header>
+
+
+    <header class="d-flex flex-wrap align-items-center justify-content-around justify-content-md-between py-1 mb-4 border-top border-bottom">
+        <a class="col-sm-2 text-end align-self-center" href="/">
+            <h7 id="currentDate"></h7>
+        </a>
+<!--        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">-->
+<!--        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>-->
+<!--      </a>-->
+
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="/blog" class="nav-link px-2 link-dark">Blog</a></li>
+        <li><a href="/contact" class="nav-link px-2 link-dark">Contact Us</a></li>
+        <li><a href="/about" class="nav-link px-2 link-dark">About</a></li>
+      </ul>
+
+      <div class="col-sm-2 text-end align-self-center">
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+      </div>
+    </header>
+
 
     {% block body %}
-    <h1>Hello, world!</h1>
+    <h1>Base page</h1>
     {% endblock body %}
-
+ </div>
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="{% static 'script.js' %}"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
