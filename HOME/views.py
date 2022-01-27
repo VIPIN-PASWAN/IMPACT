@@ -2,9 +2,9 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse
 from HOME.models import Contact
+from BLOG.models import Post
 
 # Create your views here.
-
 
 
 def home(request):
@@ -30,3 +30,14 @@ def contact(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+
+def search(request):
+    query = request.GET['search']
+    searchTitle = Post.objects.filter(title__icontains=query)
+    searchAuth = Post.objects.filter(author__icontains=query)
+    searchCont = Post.objects.filter(content__icontains=query)
+
+    searchPost = searchTitle.union(searchAuth, searchCont)
+    context = {"searchPost": searchPost, "query": query}
+    return render(request, "blog/search.html", context)
