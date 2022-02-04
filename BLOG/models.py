@@ -20,7 +20,7 @@ class BlogComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comments = models.TextField(blank=True, null=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
     time = models.DateField(auto_now=True)
 
     def __str__(self):
